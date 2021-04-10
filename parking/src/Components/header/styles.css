@@ -4,6 +4,7 @@
 
   background-color: var(--blue);
   width: 100%;
+  max-width: 200rem;
   height: 6.5rem;
 }
 
@@ -39,10 +40,15 @@
 } */
 
 @media (max-width: 320px) {
+  .header-pagehome {
+    max-width: 70rem;
+    height: 6.5rem;
+  }
 }
 
-@media (max-width: 431px) {
-}
-
-@media (max-width: 768px) {
+@media (max-width: 654px) {
+  .header-pagehome {
+    max-width: 70rem;
+    height: 6.5rem;
+  }
 }

@@ -18,7 +18,7 @@ export default function PageHome() {
 
   useEffect(() => {
     api
-      .get("AaA-4444")
+      .get("/parking/AaA-4444")
       .then((response) => {
         console.log(response.data);
         setResponse(response.data);

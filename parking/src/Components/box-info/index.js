@@ -7,6 +7,9 @@ Descrição: Página de configuração, responsável por editar os dados de uma 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import loading from "../../assets/loading.svg";
+import api from "../../Services/api";
+
 import "./styles.css";
 
 export default function BoxInfo() {
@@ -15,6 +18,52 @@ export default function BoxInfo() {
   const [entrada, setEntrada] = useState(true);
   const [saida, setSaida] = useState(false);
   const [verifPlaca, setVerificPlaca] = useState(false);
+  const [control, setControl] = useState(true);
+
+  async function cadastrarEntrada() {
+    console.log(numberPlaca);
+    try {
+      const response = await api.post(
+        "parking",
+        { plate: numberPlaca },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+      setControl(true);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function PagamentoVeiculo() {
+    try {
+      const response = await api.post(`parking/${numberPlaca}/pay`);
+      console.log(response.data);
+      setControl(true);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function SaidaVeiculo() {
+    try {
+      const response = await api.post(`parking/${numberPlaca}/out`, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(response.data);
+      setControl(true);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   function entry() {
     setStatus(true);
@@ -31,7 +80,7 @@ export default function BoxInfo() {
   function validarPlaca(placa) {
     var resposta = "placa inválida";
 
-    const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
+    const regexPlaca = /^[a-zA-Z]{3}-[0-9]{4}$/;
 
     const regexPlacaMercosulCarro = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
 
@@ -73,28 +122,41 @@ export default function BoxInfo() {
           </Link>
         </div>
         {status ? (
-          <form className="form-box" action="">
-            <div id="formButton">
-              <div id="inputPlaca">
-                <input
-                  value={numberPlaca}
-                  type="text"
-                  maxLength="8"
-                  className="inputPesquisa"
-                  placeholder="AAA-0000"
-                  onChange={(e) =>
-                    setNumberPlaca(verificaPlacaCSS(e.target.value))
-                  }
-                />
-                <label className="labelPesquisa">Número da Placa:</label>
+          <>
+            {control ? (
+              <div className="form-box" action="" onSubmit={cadastrarEntrada}>
+                <div id="formButton">
+                  <div id="inputPlaca">
+                    <input
+                      value={numberPlaca}
+                      type="text"
+                      maxLength="8"
+                      className="inputPesquisa"
+                      placeholder="AAA-0000"
+                      onChange={(e) =>
+                        setNumberPlaca(verificaPlacaCSS(e.target.value))
+                      }
+                    />
+                    <label className="labelPesquisa">Número da Placa:</label>
+                  </div>
+                  <button
+                    className="botao-grande"
+                    id={`placa${verifPlaca}`}
+                    onClick={() => cadastrarEntrada()}
+                  >
+                    CONFIRMAR ENTRADA
+                  </button>
+                </div>
               </div>
-              <button className="botao-grande" id={`placa${verifPlaca}`}>
-                CONFIRMAR ENTRADA
-              </button>
-            </div>
-          </form>
+            ) : (
+              <div className="loading">
+                <img src={loading} alt="Loading" />
+                <h1>Registrando...</h1>
+              </div>
+            )}
+          </>
         ) : (
-          <form className="form-box" action="">
+          <div className="form-box" action="" onSubmit={cadastrarEntrada}>
             <div id="formButton">
               <div id="inputPlaca">
                 <input
@@ -110,16 +172,24 @@ export default function BoxInfo() {
                 <label className="labelPesquisa">Número da Placa:</label>
               </div>
               <div className="conjuntoButton">
-                <button className="botao-grande" id={`pagamento${verifPlaca}`}>
+                <button
+                  className="botao-grande"
+                  id={`pagamento${verifPlaca}`}
+                  onClick={() => PagamentoVeiculo()}
+                >
                   PAGAMENTO
                 </button>
-                <button className="botao-grande" id={`saida${verifPlaca}`}>
+                <button
+                  className="botao-grande"
+                  id={`saida${verifPlaca}`}
+                  onClick={() => SaidaVeiculo()}
+                >
                   SAÍDA
                 </button>
                 <Link id="historico">VER HISTÓRICO</Link>
               </div>
             </div>
-          </form>
+          </div>
         )}
       </div>
     </div>

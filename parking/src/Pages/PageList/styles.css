@@ -1,0 +1,63 @@
+html {
+  background-color: var(--background);
+}
+
+.box-external {
+  padding: 20px;
+}
+
+.container-pagelist {
+  width: 25rem;
+  height: 30rem;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.container-pagelist .placa-header {
+  display: flex;
+  justify-content: space-between;
+  width: 8rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.container-pagelist .box-list .itens {
+  text-align: left;
+  font-weight: 400;
+}
+
+.container-pagelist .box-list .itens label {
+  font-size: 15px;
+  color: #dadadc;
+}
+
+.container-pagelist .box-list .itens h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.container-pagelist .box-list .itens-gerais {
+  width: 22rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.container-pagelist .box-list {
+  height: 5.188rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 431px) {
+}
+
+@media (max-width: 768px) {
+}

@@ -46,6 +46,7 @@ export default function BoxInfo() {
   async function PagamentoVeiculo() {
     try {
       await api.post(`parking/${numberPlaca}/pay`);
+      localStorage.setItem("placa", numberPlaca);
       Swal.fire("PAGO!", "Pagamento realizado com sucesso!", "success");
     } catch (err) {
       Swal.fire({

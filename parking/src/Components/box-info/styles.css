@@ -1,0 +1,167 @@
+.container-box-info {
+  width: 100%;
+  height: 100%;
+  height: 37.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-box-info .container-box {
+  width: 40rem;
+  background-color: var(--white);
+  border-radius: 8px;
+}
+
+.container-box-info .container-box .indicadores {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+
+.container-box-info .container-box .indicadores #indicEntradatrue {
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  padding: 10px;
+  border-radius: 8px 0px 0px 0px;
+  width: 40rem;
+  font-size: 20px;
+}
+
+.container-box-info .container-box .indicadores #indicEntradafalse {
+  background-color: var(--background);
+  color: var(--blue);
+  padding: 10px;
+  width: 40rem;
+  font-size: 20px;
+}
+
+.container-box-info .container-box .indicadores #indicSaidatrue {
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  padding: 10px;
+  border-radius: 8px 0px 0px 0px;
+  width: 40rem;
+  font-size: 20px;
+}
+
+.container-box-info .container-box .indicadores #indicSaidafalse {
+  background-color: var(--background);
+  color: var(--blue);
+  padding: 10px;
+  width: 40rem;
+  font-size: 20px;
+}
+
+.container-box-info .container-box .form-box input {
+  background-color: #fffbe6;
+  margin: 1.5rem 0 1rem 0;
+  width: 19.5rem;
+  height: 4.188rem;
+  border-radius: 4px;
+}
+
+.container-box-info .container-box .form-box button {
+  margin: 1.1rem 0 1rem 0;
+  width: 19.5rem;
+  height: 4.188rem;
+  border-radius: 4px;
+}
+
+.container-box-info .container-box .form-box #placafalse {
+  background-color: #dadada;
+  color: #9b9b9b;
+}
+
+.container-box-info .container-box .form-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.container-box-info .container-box .form-box #formButton .conjuntoButton {
+  display: inline-grid;
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #pagamentotrue {
+  background-color: var(--porple);
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #saidatrue {
+  background-color: var(--white);
+  border: 1px solid var(--porple);
+  color: var(--porple);
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #pagamentofalse {
+  background-color: #dadada;
+  color: #9b9b9b;
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #saidafalse {
+  background-color: #fff;
+  border: 2px solid #dadada;
+  color: #9b9b9b;
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #historico {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  .botao-grande
+  + .botao-grande {
+  margin-top: 0px;
+}
+
+.inputPesquisa {
+  position: relative;
+  color: #5b5b5b;
+  z-index: 2;
+}
+
+.labelPesquisa {
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  color: #9b9b9b;
+  right: 8%;
+  transition: 0.5s;
+  margin-top: 4%;
+}
+
+.inputPesquisa:focus + .labelPesquisa {
+  margin-top: 0.5rem;
+  z-index: 2;
+  transition: 0.5s;
+}

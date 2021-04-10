@@ -6,8 +6,8 @@ Descrição: Página de configuração, responsável por editar os dados de uma 
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-import loading from "../../assets/loading.svg";
 import api from "../../Services/api";
 
 import "./styles.css";
@@ -18,7 +18,6 @@ export default function BoxInfo() {
   const [entrada, setEntrada] = useState(true);
   const [saida, setSaida] = useState(false);
   const [verifPlaca, setVerificPlaca] = useState(false);
-  const [control, setControl] = useState(true);
 
   async function cadastrarEntrada() {
     console.log(numberPlaca);
@@ -33,36 +32,78 @@ export default function BoxInfo() {
           },
         }
       );
+      Swal.fire("Registrado!", "Seja bem-vindo", "success");
       console.log(response.data);
-      setControl(true);
     } catch (err) {
-      console.log(err);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Este carro já está no parque",
+      });
     }
   }
 
   async function PagamentoVeiculo() {
     try {
-      const response = await api.post(`parking/${numberPlaca}/pay`);
-      console.log(response.data);
-      setControl(true);
+      await api.post(`parking/${numberPlaca}/pay`);
+      Swal.fire("PAGO!", "Pagamento realizado com sucesso!", "success");
     } catch (err) {
-      console.log(err);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo está errado",
+      });
     }
+  }
+
+  function alertPagamento() {
+    Swal.fire({
+      title: "Confirmar o pagamento da placa abaixo?",
+      text: numberPlaca,
+      showCancelButton: true,
+      confirmButtonColor: "var(--porple)",
+      cancelButtonColor: "#DADADA",
+      confirmButtonText: "CONFIRMAR",
+      cancelButtonText: "VOLTAR",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        PagamentoVeiculo();
+      }
+    });
   }
 
   async function SaidaVeiculo() {
     try {
-      const response = await api.post(`parking/${numberPlaca}/out`, {
+      await api.post(`parking/${numberPlaca}/out`, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
       });
-      console.log(response.data);
-      setControl(true);
+      Swal.fire("SAIDA LIBERADA!", "Saída realizado com sucesso!", "success");
     } catch (err) {
-      console.log(err);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Algo está errado",
+      });
     }
+  }
+
+  function alertSaida() {
+    Swal.fire({
+      title: "Confirmar a saida do veiculo da placa abaixo?",
+      text: numberPlaca,
+      showCancelButton: true,
+      confirmButtonColor: "var(--porple)",
+      cancelButtonColor: "#DADADA",
+      confirmButtonText: "CONFIRMAR",
+      cancelButtonText: "VOLTAR",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        SaidaVeiculo();
+      }
+    });
   }
 
   function entry() {
@@ -122,39 +163,30 @@ export default function BoxInfo() {
           </Link>
         </div>
         {status ? (
-          <>
-            {control ? (
-              <div className="form-box" action="" onSubmit={cadastrarEntrada}>
-                <div id="formButton">
-                  <div id="inputPlaca">
-                    <input
-                      value={numberPlaca}
-                      type="text"
-                      maxLength="8"
-                      className="inputPesquisa"
-                      placeholder="AAA-0000"
-                      onChange={(e) =>
-                        setNumberPlaca(verificaPlacaCSS(e.target.value))
-                      }
-                    />
-                    <label className="labelPesquisa">Número da Placa:</label>
-                  </div>
-                  <button
-                    className="botao-grande"
-                    id={`placa${verifPlaca}`}
-                    onClick={() => cadastrarEntrada()}
-                  >
-                    CONFIRMAR ENTRADA
-                  </button>
-                </div>
+          <div className="form-box" action="" onSubmit={cadastrarEntrada}>
+            <div id="formButton">
+              <div id="inputPlaca">
+                <input
+                  value={numberPlaca}
+                  type="text"
+                  maxLength="8"
+                  className="inputPesquisa"
+                  placeholder="AAA-0000"
+                  onChange={(e) =>
+                    setNumberPlaca(verificaPlacaCSS(e.target.value))
+                  }
+                />
+                <label className="labelPesquisa">Número da Placa:</label>
               </div>
-            ) : (
-              <div className="loading">
-                <img src={loading} alt="Loading" />
-                <h1>Registrando...</h1>
-              </div>
-            )}
-          </>
+              <button
+                className="botao-grande"
+                id={`placa${verifPlaca}`}
+                onClick={() => cadastrarEntrada()}
+              >
+                CONFIRMAR ENTRADA
+              </button>
+            </div>
+          </div>
         ) : (
           <div className="form-box" action="" onSubmit={cadastrarEntrada}>
             <div id="formButton">
@@ -175,14 +207,14 @@ export default function BoxInfo() {
                 <button
                   className="botao-grande"
                   id={`pagamento${verifPlaca}`}
-                  onClick={() => PagamentoVeiculo()}
+                  onClick={() => alertPagamento()}
                 >
                   PAGAMENTO
                 </button>
                 <button
                   className="botao-grande"
                   id={`saida${verifPlaca}`}
-                  onClick={() => SaidaVeiculo()}
+                  onClick={() => alertSaida()}
                 >
                   SAÍDA
                 </button>

@@ -86,3 +86,12 @@ html {
   border: 1px solid #dadada;
   border-radius: 8px;
 }
+
+@media (max-width: 680px) {
+  .container-pagelist {
+    width: 20rem;
+  }
+  .container-pagelist .box-list .itens-gerais {
+    width: 17rem;
+  }
+}

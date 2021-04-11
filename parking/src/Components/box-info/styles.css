@@ -191,9 +191,6 @@
   transition: 0.5s;
 }
 
-@media (max-width: 375px) {
-}
-
 @media (max-width: 680px) {
   .container-box-info .container-box {
     width: 30rem;
@@ -229,7 +226,4 @@
   .container-box-info .container-box {
     width: 25rem;
   }
-}
-
-@media (max-width: 768px) {
 }

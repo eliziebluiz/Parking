@@ -4,34 +4,21 @@ Autor: Elizieb Luiz;
 Descrição: Página de configuração, responsável por editar os dados de uma clinica.
 */
 
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 import logo from "../../assets/logo.svg";
-import { ChallengesContext } from "../../Services/Context/ChallengesContext";
+import Menu from "../Menu";
 
 import "./styles.css";
 
 export default function Header() {
-  const { entry, said } = useContext(ChallengesContext);
   return (
     <header className="header-pagehome">
       <div className="header-left-pagehome">
         <img id="logo" src={logo} alt="logo" />
-        <h1>Parking</h1>
+        <h1 id="parking">Parking</h1>
       </div>
-      <div className="header-right-pagehome">
-        <h3>
-          <Link to="/" onClick={() => entry()}>
-            Entrada
-          </Link>
-        </h3>
-        <h3>
-          <Link to="/" onClick={() => said()}>
-            Saida
-          </Link>
-        </h3>
-      </div>
+      <Menu />
     </header>
   );
 }

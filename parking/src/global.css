@@ -27,8 +27,7 @@ a {
 }
 
 input,
-button,
-select {
+button {
   font: 400 18px Open Sans, sans-serif;
 }
 
@@ -36,10 +35,6 @@ button {
   cursor: pointer;
 }
 
-form input,
-form select,
-#form select,
-form option,
 input {
   width: 100%;
   height: 40px;
@@ -48,16 +43,6 @@ input {
   border-radius: 5px;
   padding: 0 24px;
   transition: border 200ms ease-out;
-}
-form input:focus,
-input:focus,
-select:focus {
-  border: 1.5px solid var(--cor-azul);
-}
-
-form select,
-#form select {
-  color: var(--cor-cinza-claro-select);
 }
 
 .botao-grande {
@@ -84,17 +69,6 @@ form select,
   filter: brightness(1.2);
 }
 
-/*Scroll presonalizado*/
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-/* width */
 ::-webkit-scrollbar {
   width: 8px;
   height: 4px;

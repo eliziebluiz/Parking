@@ -180,7 +180,7 @@
   font-size: 12px;
   position: absolute;
   color: #9b9b9b;
-  right: 8%;
+  right: 100px;
   transition: 0.5s;
   margin-top: 4%;
 }
@@ -192,19 +192,43 @@
 }
 
 @media (max-width: 375px) {
-  .container-box-info {
-    height: 70rem;
-    width: 70rem !important;
+}
+
+@media (max-width: 680px) {
+  .container-box-info .container-box {
+    width: 30rem;
+  }
+  .container-box-info .container-box .form-box input {
+    width: 17rem;
+  }
+  .labelPesquisa {
+    margin-top: 5%;
+    right: 80px;
   }
 }
 
-@media (min-height: 875px) {
-  .container-box-info {
-    height: 70rem;
+@media (max-width: 430px) {
+  .container-box-info .container-box {
+    width: 20rem !important;
+  }
+  .container-box-info .container-box .form-box input {
+    width: 17rem;
+  }
+  .labelPesquisa {
+    margin-top: 6%;
+    right: 80px;
+  }
+  .container-box-info .container-box .form-box button {
+    margin: 1.1rem 0 1rem 0;
+    width: 17rem;
+    border-radius: 4px;
   }
 }
 
-@media (max-width: 431px) {
+@media (max-width: 530px) {
+  .container-box-info .container-box {
+    width: 25rem;
+  }
 }
 
 @media (max-width: 768px) {

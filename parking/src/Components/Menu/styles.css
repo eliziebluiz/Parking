@@ -1,0 +1,83 @@
+.ContainerMenu {
+  width: 100%;
+  min-width: 210px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ContainerMenu .header-right-pagehome {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Menu {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 7vh;
+  right: 3vh;
+  width: 30px;
+  height: 30px;
+}
+
+.Menu .BarraMenu {
+  width: 100%;
+  height: 3px;
+  right: 3vh;
+  background: #fff;
+  margin: 5px 0;
+}
+
+.Sobreposicaofalse {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #0000;
+  opacity: 0.6;
+}
+
+.header-right-pagehome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1.5rem;
+}
+
+.header-pagehome .header-right-pagehome h3 {
+  color: var(--white);
+  margin-right: 1.5rem;
+  margin-top: 35px;
+}
+
+@media (max-width: 470px) {
+  .Menu {
+    display: inline;
+    top: 4vh !important;
+  }
+  .ContainerMenufalse {
+    display: none !important;
+  }
+  .ContainerMenutrue {
+    display: block !important;
+    width: 200vh;
+    height: 150vh;
+    z-index: 3;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    background-color: var(--blue);
+  }
+  .header-right-pagehome {
+    display: inline;
+  }
+}

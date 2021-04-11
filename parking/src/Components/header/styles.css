@@ -15,17 +15,6 @@
   height: 6.5rem;
 }
 
-.header-pagehome .header-right-pagehome {
-  display: flex;
-  align-items: center;
-  margin: 0 1.5rem;
-}
-
-.header-pagehome .header-right-pagehome h3 {
-  color: var(--white);
-  margin-right: 1.5rem;
-}
-
 .header-pagehome h1 {
   color: var(--white);
 }
@@ -43,6 +32,12 @@
   .header-pagehome {
     max-width: 70rem;
     height: 6.5rem;
+  }
+}
+
+@media (max-width: 470px) {
+  #parking {
+    display: none;
   }
 }
 

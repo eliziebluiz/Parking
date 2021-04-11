@@ -142,7 +142,19 @@
   .form-box
   #formButton
   .conjuntoButton
-  #historico {
+  #historicofalse {
+  background-color: var(--white);
+  color: var(--blue);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.container-box-info
+  .container-box
+  .form-box
+  #formButton
+  .conjuntoButton
+  #historicotrue {
   background-color: var(--white);
   color: var(--blue);
 }

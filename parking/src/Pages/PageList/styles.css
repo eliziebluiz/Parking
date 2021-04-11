@@ -23,6 +23,10 @@ html {
   margin-bottom: 10px;
 }
 
+.container-pagelist .placa-header h3 {
+  font-weight: 400;
+}
+
 .container-pagelist .box-list .itens {
   text-align: left;
   font-weight: 400;
@@ -47,6 +51,36 @@ html {
 
 .container-pagelist .box-list {
   height: 5.188rem;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+}
+
+.container-pagelist .box-list-details .itens-details {
+  text-align: left;
+  font-weight: 400;
+}
+
+.container-pagelist .box-list-details .itens-details label {
+  font-size: 15px;
+  color: #dadadc;
+}
+
+.container-pagelist .box-list-details .itens-details h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 10px 0px 35px 0px;
+}
+
+.container-pagelist .box-list-details .itens-gerais-details {
+  width: 22rem;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.container-pagelist .box-list-details {
+  height: 24rem;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #dadada;

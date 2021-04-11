@@ -2,11 +2,13 @@ import "./global.css";
 
 import Route from "./Services/route";
 
+import { ChallengesProvider } from "./Services/Context/ChallengesContext";
+
 function App() {
   return (
-    <div>
+    <ChallengesProvider>
       <Route />
-    </div>
+    </ChallengesProvider>
   );
 }
 

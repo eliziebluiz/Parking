@@ -4,20 +4,22 @@ Autor: Elizieb Luiz;
 Descrição: Página de configuração, responsável por editar os dados de uma clinica.
 */
 
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import api from "../../Services/api";
+import { ChallengesContext } from "../../Services/Context/ChallengesContext";
 
 import "./styles.css";
 
 export default function BoxInfo() {
   const [numberPlaca, setNumberPlaca] = useState("");
-  const [status, setStatus] = useState(true);
-  const [entrada, setEntrada] = useState(true);
-  const [saida, setSaida] = useState(false);
   const [verifPlaca, setVerificPlaca] = useState(false);
+
+  const { entrada, saida, status, entry, said } = useContext(ChallengesContext);
+
+  const history = useHistory();
 
   async function cadastrarEntrada() {
     console.log(numberPlaca);
@@ -82,6 +84,7 @@ export default function BoxInfo() {
         },
       });
       Swal.fire("SAIDA LIBERADA!", "Saída realizado com sucesso!", "success");
+      history.push("/pagelist");
     } catch (err) {
       Swal.fire({
         icon: "error",
@@ -107,18 +110,6 @@ export default function BoxInfo() {
     });
   }
 
-  function entry() {
-    setStatus(true);
-    setEntrada(true);
-    setSaida(false);
-  }
-
-  function said() {
-    setStatus(false);
-    setEntrada(false);
-    setSaida(true);
-  }
-
   function validarPlaca(placa) {
     var resposta = "placa inválida";
 
@@ -131,15 +122,12 @@ export default function BoxInfo() {
     if (regexPlaca.test(placa)) {
       resposta = "Placa válida no formato atual";
       setVerificPlaca(true);
-      console.log(resposta);
     } else if (regexPlacaMercosulCarro.test(placa)) {
       resposta = "Placa válida (padrão Mercosul - carro)";
       setVerificPlaca(true);
-      console.log(resposta);
     } else if (regexPlacaMercosulMoto.test(placa)) {
       resposta = "Placa válida (padrão Mercosul - moto)";
       setVerificPlaca(true);
-      console.log(resposta);
     } else {
       setVerificPlaca(false);
     }
@@ -219,7 +207,15 @@ export default function BoxInfo() {
                 >
                   SAÍDA
                 </button>
-                <Link id="historico">VER HISTÓRICO</Link>
+                <Link
+                  to="/pagelist"
+                  id={`historico${verifPlaca}`}
+                  onClick={() => {
+                    localStorage.setItem("placa", numberPlaca);
+                  }}
+                >
+                  VER HISTÓRICO
+                </Link>
               </div>
             </div>
           </div>

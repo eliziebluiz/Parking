@@ -20,6 +20,7 @@ export default function PageHome() {
   const [details, setDetails] = useState(true);
   const [dados, setDados] = useState("");
   const placa = localStorage.getItem("placa");
+
   useEffect(() => {
     api
       .get(`/parking/${placa}`)
@@ -34,9 +35,9 @@ export default function PageHome() {
 
   console.log(details);
 
-  function capturaPlaca(placa) {
+  function capturaPlaca(date) {
     historico.forEach((element) => {
-      if (placa === element.plate) {
+      if (date === element) {
         setDados(element);
         setDetails(false);
       }
@@ -50,20 +51,17 @@ export default function PageHome() {
       <div className="box-external">
         <div className="container-pagelist">
           <div className="placa-header">
-            <Link to="/">
+            <Link to={details ? "/" : "#"} onClick={() => setDetails(true)}>
               <img src={Back} alt="" />
             </Link>
-            <h3>{placa}</h3>
+            <h3 style={{ display: details ? "inline" : "none" }}>{placa}</h3>
           </div>
           {details ? (
-            <div className="box-list">
-              <table>
-                <tbody>
-                  {historico.map((carro) => (
-                    <th
-                      key={carro.plate}
-                      onClick={() => capturaPlaca(carro.plate)}
-                    >
+            <table>
+              <tbody>
+                {historico.map((carro) => (
+                  <div className="box-list">
+                    <th key={carro.plate} onClick={() => capturaPlaca(carro)}>
                       <div className="itens-gerais">
                         <div className="itens">
                           <label>TEMPO ATUAL</label>
@@ -75,26 +73,28 @@ export default function PageHome() {
                         </div>
                       </div>
                     </th>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </div>
+                ))}
+              </tbody>
+            </table>
           ) : (
-            <div className="box-list">
-              <div className="itens-gerais">
-                <div className="itens">
+            <div className="box-list-details">
+              <div className="itens-gerais-details">
+                <div className="itens-details">
                   <label>PLACA</label>
-                  <h3>{dados.plate}</h3>
+                  <h3 style={{ fontSize: "38px", color: "var(--blue)" }}>
+                    {dados.plate}
+                  </h3>
                 </div>
-                <div className="itens">
+                <div className="itens-details">
                   <label>STATUS</label>
-                  <h3>{dados.left}</h3>
+                  <h3>{dados.left ? "Não Estacionado" : "Estacionado"}</h3>
                 </div>
-                <div className="itens">
+                <div className="itens-details">
                   <label>TEMPO ATUAL</label>
                   <h3>{dados.time}</h3>
                 </div>
-                <div className="itens">
+                <div className="itens-details">
                   <label>PAGAMENTO</label>
                   <h3>{dados.paid ? "Pago" : "__"}</h3>
                 </div>

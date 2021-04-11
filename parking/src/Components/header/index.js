@@ -4,14 +4,16 @@ Autor: Elizieb Luiz;
 Descrição: Página de configuração, responsável por editar os dados de uma clinica.
 */
 
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
+import { ChallengesContext } from "../../Services/Context/ChallengesContext";
 
 import "./styles.css";
 
 export default function Header() {
+  const { entry, said } = useContext(ChallengesContext);
   return (
     <header className="header-pagehome">
       <div className="header-left-pagehome">
@@ -20,10 +22,14 @@ export default function Header() {
       </div>
       <div className="header-right-pagehome">
         <h3>
-          <Link to="/">Entrada</Link>
+          <Link to="/" onClick={() => entry()}>
+            Entrada
+          </Link>
         </h3>
         <h3>
-          <Link to="/">Saida</Link>
+          <Link to="/" onClick={() => said()}>
+            Saida
+          </Link>
         </h3>
       </div>
     </header>

@@ -7,7 +7,7 @@ Descrição: Página de configuração, responsável por editar os dados de uma 
 import React from "react";
 
 import logo from "../../assets/logo.svg";
-import Menu from "../Menu";
+import Menu from "../menu";
 
 import "./styles.css";
 

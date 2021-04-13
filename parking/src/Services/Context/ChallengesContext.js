@@ -7,6 +7,8 @@ export function ChallengesProvider({ children }) {
   const [entrada, setEntrada] = useState(true);
   const [saida, setSaida] = useState(false);
   const [status, setStatus] = useState(true);
+  const [numberPlaca, setNumberPlaca] = useState("");
+  const [verifPlaca, setVerificPlaca] = useState(false);
 
   function entry() {
     setStatus(true);
@@ -31,6 +33,10 @@ export function ChallengesProvider({ children }) {
         setStatus,
         entry,
         said,
+        numberPlaca,
+        setNumberPlaca,
+        verifPlaca,
+        setVerificPlaca,
       }}
     >
       {children}

@@ -57,22 +57,30 @@ export default function PageHome() {
           {details ? (
             <table>
               <tbody>
-                {historico.map((carro) => (
-                  <div className="box-list">
-                    <th key={carro.plate} onClick={() => capturaPlaca(carro)}>
-                      <div className="itens-gerais">
-                        <div className="itens">
-                          <label>TEMPO ATUAL</label>
-                          <h3>{carro.time}</h3>
-                        </div>
-                        <div className="itens">
-                          <label>PAGAMENTO</label>
-                          <h3>{carro.paid ? "Pago" : "__"}</h3>
-                        </div>
-                      </div>
-                    </th>
+                {historico.length === 0 ? (
+                  <div className="itens">
+                    <h3 style={{ color: "var(--blue)" }}>
+                      Nenhum histórico deste veiculo foi encontrado
+                    </h3>
                   </div>
-                ))}
+                ) : (
+                  historico.map((carro) => (
+                    <div className="box-list">
+                      <th key={carro.plate} onClick={() => capturaPlaca(carro)}>
+                        <div className="itens-gerais">
+                          <div className="itens">
+                            <label>TEMPO ATUAL</label>
+                            <h3>{carro.time}</h3>
+                          </div>
+                          <div className="itens">
+                            <label>PAGAMENTO</label>
+                            <h3>{carro.paid ? "Pago" : "__"}</h3>
+                          </div>
+                        </div>
+                      </th>
+                    </div>
+                  ))
+                )}
               </tbody>
             </table>
           ) : (

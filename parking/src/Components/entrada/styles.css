@@ -1,0 +1,118 @@
+.form-box input {
+  background-color: #fffbe6;
+  margin: 1.5rem 0 1rem 0;
+  width: 19.5rem;
+  height: 4.188rem;
+  border-radius: 4px;
+}
+
+.form-box button {
+  margin: 1.1rem 0 1rem 0;
+  width: 19.5rem;
+  height: 4.188rem;
+  border-radius: 4px;
+}
+
+.form-box #placafalse {
+  background-color: #dadada;
+  color: #9b9b9b;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.form-box #formButton .conjuntoButton {
+  display: inline-grid;
+}
+
+.form-box #formButton .conjuntoButton #pagamentotrue {
+  background-color: var(--porple);
+}
+
+.form-box #formButton .conjuntoButton #saidatrue {
+  background-color: var(--white);
+  border: 1px solid var(--porple);
+  color: var(--porple);
+}
+
+.form-box #formButton .conjuntoButton #pagamentofalse {
+  background-color: #dadada;
+  color: #9b9b9b;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-box #formButton .conjuntoButton #saidafalse {
+  background-color: #fff;
+  border: 2px solid #dadada;
+  color: #9b9b9b;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-box #formButton .conjuntoButton #historicofalse {
+  background-color: var(--white);
+  color: var(--blue);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-box #formButton .conjuntoButton #historicotrue {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.form-box #formButton .conjuntoButton .botao-grande + .botao-grande {
+  margin-top: 0px;
+}
+
+.inputPesquisa {
+  position: relative;
+  color: #5b5b5b;
+  z-index: 2;
+}
+
+.labelPesquisa {
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  color: #9b9b9b;
+  right: 100px;
+  transition: 0.5s;
+  margin-top: 4%;
+}
+
+.inputPesquisa:focus + .labelPesquisa {
+  margin-top: 0.5rem;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+@media (max-width: 680px) {
+  .form-box input {
+    width: 17rem;
+  }
+  .labelPesquisa {
+    margin-top: 5%;
+    right: 80px;
+  }
+}
+
+@media (max-width: 430px) {
+  .form-box input {
+    width: 17rem;
+  }
+  .labelPesquisa {
+    margin-top: 6%;
+    right: 80px;
+  }
+  .form-box button {
+    margin: 1.1rem 0 1rem 0;
+    width: 17rem;
+    border-radius: 4px;
+  }
+}

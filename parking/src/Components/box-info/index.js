@@ -50,6 +50,7 @@ export default function BoxInfo() {
       await api.post(`parking/${numberPlaca}/pay`);
       localStorage.setItem("placa", numberPlaca);
       Swal.fire("PAGO!", "Pagamento realizado com sucesso!", "success");
+      alertSaida();
     } catch (err) {
       Swal.fire({
         icon: "error",
@@ -136,6 +137,7 @@ export default function BoxInfo() {
   }
 
   function verificaPlacaCSS(value) {
+    value = value.replace(/(\d{3})?(\d{4})$/, "$1-$2");
     validarPlaca(value);
     return value;
   }

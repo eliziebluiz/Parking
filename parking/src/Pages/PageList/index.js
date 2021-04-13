@@ -31,8 +31,6 @@ export default function PageHome() {
       .catch((error) => console.log(error));
   }, [placa]);
 
-  //ABC-3450
-
   console.log(details);
 
   function capturaPlaca(date) {

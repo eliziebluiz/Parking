@@ -25,13 +25,10 @@ export default function PageHome() {
     api
       .get(`/parking/${placa}`)
       .then((response) => {
-        console.log(response.data);
         setHistorico(response.data);
       })
       .catch((error) => console.log(error));
   }, [placa]);
-
-  console.log(details);
 
   function capturaPlaca(date) {
     historico.forEach((element) => {
@@ -40,7 +37,6 @@ export default function PageHome() {
         setDetails(false);
       }
     });
-    console.log(dados);
   }
 
   return (
@@ -59,7 +55,7 @@ export default function PageHome() {
               <tbody>
                 {historico.length === 0 ? (
                   <div className="itens">
-                    <h3 style={{ color: "var(--blue)" }}>
+                    <h3 id="NenhumHistory">
                       Nenhum histórico deste veiculo foi encontrado
                     </h3>
                   </div>

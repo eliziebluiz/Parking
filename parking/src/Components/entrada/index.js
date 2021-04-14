@@ -21,9 +21,8 @@ export default function Entrada() {
   } = useContext(ChallengesContext);
 
   async function cadastrarEntrada() {
-    console.log(numberPlaca);
     try {
-      const response = await api.post(
+      await api.post(
         "parking",
         { plate: numberPlaca },
         {
@@ -34,7 +33,6 @@ export default function Entrada() {
         }
       );
       Swal.fire("Registrado!", "Seja bem-vindo", "success");
-      console.log(response.data);
     } catch (err) {
       Swal.fire({
         icon: "error",
@@ -45,8 +43,6 @@ export default function Entrada() {
   }
 
   function validarPlaca(placa) {
-    var resposta = "placa inválida";
-
     const regexPlaca = /^[a-zA-Z]{3}-[0-9]{4}$/;
 
     const regexPlacaMercosulCarro = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
@@ -54,19 +50,14 @@ export default function Entrada() {
     const regexPlacaMercosulMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
 
     if (regexPlaca.test(placa)) {
-      resposta = "Placa válida no formato atual";
       setVerificPlaca(true);
     } else if (regexPlacaMercosulCarro.test(placa)) {
-      resposta = "Placa válida (padrão Mercosul - carro)";
       setVerificPlaca(true);
     } else if (regexPlacaMercosulMoto.test(placa)) {
-      resposta = "Placa válida (padrão Mercosul - moto)";
       setVerificPlaca(true);
     } else {
       setVerificPlaca(false);
     }
-
-    console.log(resposta);
   }
 
   function verificaPlacaCSS(value) {

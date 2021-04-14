@@ -61,14 +61,6 @@
   font-size: 20px;
 }
 
-.container-box-info .container-box .form-box input {
-  background-color: #fffbe6;
-  margin: 1.5rem 0 1rem 0;
-  width: 19.5rem;
-  height: 4.188rem;
-  border-radius: 4px;
-}
-
 .container-box-info .container-box .form-box button {
   margin: 1.1rem 0 1rem 0;
   width: 19.5rem;
@@ -195,9 +187,6 @@
   .container-box-info .container-box {
     width: 30rem;
   }
-  .container-box-info .container-box .form-box input {
-    width: 17rem;
-  }
   .labelPesquisa {
     margin-top: 5%;
     right: 80px;
@@ -207,9 +196,6 @@
 @media (max-width: 430px) {
   .container-box-info .container-box {
     width: 20rem !important;
-  }
-  .container-box-info .container-box .form-box input {
-    width: 17rem;
   }
   .labelPesquisa {
     margin-top: 6%;

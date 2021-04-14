@@ -86,6 +86,11 @@ html {
   border-radius: 8px;
 }
 
+#NenhumHistory {
+  color: var(--blue);
+  text-align: center;
+}
+
 @media (max-width: 680px) {
   .container-pagelist {
     width: 20rem;

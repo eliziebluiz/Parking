@@ -23,7 +23,6 @@ export default function Saida() {
     try {
       await api.post(`parking/${numberPlaca}/pay`);
       localStorage.setItem("placa", numberPlaca);
-      Swal.fire("PAGO!", "Pagamento realizado com sucesso!", "success");
       alertSaida();
     } catch (err) {
       Swal.fire({
@@ -36,7 +35,7 @@ export default function Saida() {
 
   function alertPagamento() {
     Swal.fire({
-      title: "Confirmar o pagamento da placa abaixo?",
+      title: "Confirmar o PAGAMENTO da placa abaixo?",
       text: numberPlaca,
       showCancelButton: true,
       confirmButtonColor: "var(--porple)",
@@ -46,6 +45,7 @@ export default function Saida() {
     }).then((result) => {
       if (result.isConfirmed) {
         PagamentoVeiculo();
+        Swal.fire("PAGO!", "Pagamento realizado com sucesso!", "success");
       }
     });
   }
@@ -71,7 +71,7 @@ export default function Saida() {
 
   function alertSaida() {
     Swal.fire({
-      title: "Confirmar a saida do veiculo da placa abaixo?",
+      title: "Confirmar a SAÍDA do veiculo da placa abaixo?",
       text: numberPlaca,
       showCancelButton: true,
       confirmButtonColor: "var(--porple)",

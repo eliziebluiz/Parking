@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 import api from "../../Services/api";
 import { verificaPlacaCSS } from "../../Services/mascaraPlaca";
 import { ChallengesContext } from "../../Services/Context/ChallengesContext";
+import error from "../../assets/error.svg";
+import errorGreen from "../../assets/error-green.svg";
 
 import "./styles.css";
 
@@ -52,6 +54,13 @@ export default function Entrada() {
             }
           />
           <label className="labelPesquisa">Número da Placa:</label>
+        </div>
+        <div className={`error-placa${verifPlaca}`}>
+          <img
+            id={`img-error`}
+            src={verifPlaca ? errorGreen : error}
+            alt="error"
+          ></img>
         </div>
         <button
           className="botao-grande"

@@ -4,6 +4,8 @@
   width: 19.5rem;
   height: 4.188rem;
   border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .form-box button {
@@ -81,7 +83,7 @@
   font-size: 12px;
   position: absolute;
   color: #9b9b9b;
-  right: 100px;
+  right: 110px;
   transition: 0.5s;
   margin-top: 4%;
 }
@@ -97,8 +99,8 @@
     width: 17rem;
   }
   .labelPesquisa {
-    margin-top: 5%;
-    right: 80px;
+    margin-top: 7%;
+    right: 90px;
   }
 }
 
@@ -107,8 +109,8 @@
     width: 17rem;
   }
   .labelPesquisa {
-    margin-top: 6%;
-    right: 80px;
+    margin-top: 7%;
+    right: 90px;
   }
   .form-box button {
     margin: 1.1rem 0 1rem 0;

@@ -24,6 +24,7 @@ html {
 
 .container-pagelist .placa-header h3 {
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .container-pagelist .box-list .itens {

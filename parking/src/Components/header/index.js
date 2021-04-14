@@ -1,9 +1,3 @@
-/*
-Data de criação: 18/08/2020;
-Autor: Elizieb Luiz;
-Descrição: Página de configuração, responsável por editar os dados de uma clinica.
-*/
-
 import React from "react";
 
 import logo from "../../assets/logo.svg";
@@ -16,7 +10,9 @@ export default function Header() {
     <header className="header-pagehome">
       <div className="header-left-pagehome">
         <img id="logo" src={logo} alt="logo" />
-        <h1 id="parking">Parking</h1>
+        <h1 id="parking" data-testid="title">
+          Parking
+        </h1>
       </div>
       <Menu />
     </header>

@@ -9,6 +9,7 @@ export function ChallengesProvider({ children }) {
   const [status, setStatus] = useState(true);
   const [numberPlaca, setNumberPlaca] = useState("");
   const [verifPlaca, setVerificPlaca] = useState(false);
+  const [verificaPlaca, setVerificaPlaca] = useState("init");
 
   function entry() {
     setStatus(true);
@@ -37,6 +38,8 @@ export function ChallengesProvider({ children }) {
         setNumberPlaca,
         verifPlaca,
         setVerificPlaca,
+        verificaPlaca,
+        setVerificaPlaca,
       }}
     >
       {children}

@@ -88,7 +88,7 @@
   font-size: 12px;
   position: absolute;
   color: #9b9b9b;
-  right: 110px;
+  right: 105px;
   transition: 0.5s;
   margin-top: 4%;
 }
@@ -97,6 +97,14 @@
   margin-top: 0.5rem;
   z-index: 2;
   transition: 0.5s;
+}
+
+.error-placainit {
+  display: none;
+}
+
+#inputfalse {
+  color: #ff0068;
 }
 
 .error-placafalse {
@@ -136,7 +144,7 @@
   }
   .labelPesquisa {
     margin-top: 5%;
-    right: 80px;
+    right: 85px;
   }
   .form-box #placatrue {
     margin: 1.1rem 0 1rem 0;
@@ -158,7 +166,7 @@
   }
   .labelPesquisa {
     margin-top: 7%;
-    right: 90px;
+    right: 85px;
   }
   .form-box #placatrue {
     margin: 1.1rem 0 1rem 0;

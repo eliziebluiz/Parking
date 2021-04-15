@@ -15,6 +15,7 @@ export default function Saida() {
     setNumberPlaca,
     verifPlaca,
     setVerificPlaca,
+    setVerificaPlaca,
   } = useContext(ChallengesContext);
 
   const history = useHistory();
@@ -96,7 +97,13 @@ export default function Saida() {
             className="inputPesquisa"
             placeholder="AAA-0000"
             onChange={(e) =>
-              setNumberPlaca(verificaPlacaCSS(e.target.value, setVerificPlaca))
+              setNumberPlaca(
+                verificaPlacaCSS(
+                  e.target.value,
+                  setVerificPlaca,
+                  setVerificaPlaca
+                )
+              )
             }
           />
           <label className="labelPesquisa">Número da Placa:</label>

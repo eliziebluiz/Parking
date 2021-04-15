@@ -15,6 +15,8 @@ export default function Entrada() {
     setNumberPlaca,
     verifPlaca,
     setVerificPlaca,
+    verificaPlaca,
+    setVerificaPlaca,
   } = useContext(ChallengesContext);
 
   async function cadastrarEntrada() {
@@ -44,18 +46,25 @@ export default function Entrada() {
       <div id="formButton">
         <div id="inputPlaca">
           <input
+            id={`input${verificaPlaca}`}
             value={numberPlaca}
             type="text"
-            maxLength="8"
+            maxLength={8}
             className="inputPesquisa"
             placeholder="AAA-0000"
             onChange={(e) =>
-              setNumberPlaca(verificaPlacaCSS(e.target.value, setVerificPlaca))
+              setNumberPlaca(
+                verificaPlacaCSS(
+                  e.target.value,
+                  setVerificPlaca,
+                  setVerificaPlaca
+                )
+              )
             }
           />
           <label className="labelPesquisa">Número da Placa:</label>
         </div>
-        <div className={`error-placa${verifPlaca}`}>
+        <div className={`error-placa${verificaPlaca}`}>
           <img
             id={`img-error`}
             src={verifPlaca ? errorGreen : error}

@@ -16,6 +16,17 @@ This boilerplate was developed with the following technologies:
 
 <br>
 
+## :information_source: Interfaces
+
+---
+
+<div style="display:flex">
+
+    <img src="./interfaces/QRcode.png">
+
+</div>
+
+
 ## :information_source: How To Use
 
 ---

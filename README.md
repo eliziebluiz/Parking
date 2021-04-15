@@ -20,7 +20,7 @@ This boilerplate was developed with the following technologies:
 
 ---
 
-<div style="display:flex">
+<div style="display:flex, align-items:center">
     <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/QRcode.png"" width="50%"/>
 
 </div>

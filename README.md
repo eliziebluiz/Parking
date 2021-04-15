@@ -30,9 +30,9 @@ This boilerplate was developed with the following technologies:
 ---
 
 <div style="display:flex">
-    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/1.png"" width="50%"/>
-    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/2.png"" width="50%"/>
-    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/3.png"" width="50%"/>
+    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/1.png"" width="20%"/>
+    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/2.png"" width="20%"/>
+    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/3.png"" width="20%"/>
 </div>
 
 

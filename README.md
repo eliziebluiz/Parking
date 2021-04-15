@@ -30,9 +30,10 @@ This boilerplate was developed with the following technologies:
 ---
 
 <div style="display:flex">
-    <img alt="1" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/1.png"" width="181px" heigth="392px"/>
-    <img alt="2" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/2.png"" width="181px" heigth="392px"/>
-    <img alt="3" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/3.png"" width="181px" heigth="392px"/>
+    <img alt="1" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/1.png"" width="190px" />
+    <img alt="2" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/2.png"" width="190px" />
+    <img alt="3" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/3.png"" width="190px" />
+    <img alt="4" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/4.png"" width="190px" />
 </div>
 
 

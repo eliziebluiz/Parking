@@ -40,13 +40,14 @@ html {
 .container-pagelist .box-list .itens h3 {
   font-size: 20px;
   font-weight: 400;
+  color: #0a261d;
 }
 
 .container-pagelist .box-list .itens-gerais {
   width: 22rem;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 13px;
 }
 
 .container-pagelist .box-list {
@@ -80,7 +81,7 @@ html {
 }
 
 .container-pagelist .box-list-details {
-  height: 24rem;
+  height: 27rem;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #dadada;

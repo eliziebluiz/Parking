@@ -8,12 +8,27 @@ import "./styles.css";
 
 import api from "../../Services/api";
 import { Link } from "react-router-dom";
+import Paginacao from "../../Components/paginacao/indice";
 
 export default function PageHome() {
   const [historico, setHistorico] = useState([]);
   const [details, setDetails] = useState(true);
   const [dados, setDados] = useState("");
   const placa = localStorage.getItem("placa");
+
+  const [paginaAtual, setPaginaAtual] = useState(1);
+
+  const consultasPorPagina = 4;
+
+  const indexUltimaConsulta = paginaAtual * consultasPorPagina;
+  const indexPrimeiraConsulta = indexUltimaConsulta - consultasPorPagina;
+
+  const historicoTabela = historico.slice(
+    indexPrimeiraConsulta,
+    indexUltimaConsulta
+  );
+
+  const paginar = (numero) => setPaginaAtual(numero);
 
   useEffect(() => {
     api
@@ -54,7 +69,7 @@ export default function PageHome() {
                     </h3>
                   </div>
                 ) : (
-                  historico.map((carro) => (
+                  historicoTabela.map((carro) => (
                     <div className="box-list">
                       <th key={carro.plate} onClick={() => capturaPlaca(carro)}>
                         <div className="itens-gerais">
@@ -72,6 +87,12 @@ export default function PageHome() {
                   ))
                 )}
               </tbody>
+              <Paginacao
+                style={{ display: details ? "inline" : "none" }}
+                consultasPorPagina={consultasPorPagina}
+                totalConsulta={historico.length}
+                paginar={paginar}
+              />
             </table>
           ) : (
             <div className="box-list-details">

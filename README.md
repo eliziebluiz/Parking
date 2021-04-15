@@ -40,6 +40,10 @@ This boilerplate was developed with the following technologies:
     <img alt="5" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/5.png"" width="190px" />
     <img alt="6" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/6.png"" width="190px" />
 </div>
+ 
+<div style="display:flex">
+:computer: <h3>Lembrando que esse projeto é responsivo. Do mobile first para o desktop<h3>
+</div>
 
 
 ## :information_source: How To Use

@@ -21,8 +21,7 @@ This boilerplate was developed with the following technologies:
 ---
 
 <div style="display:flex">
-
-    <img src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/QRcode.png">
+    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/QRcode.png"" width="50%"/>
 
 </div>
 

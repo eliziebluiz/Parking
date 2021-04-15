@@ -42,7 +42,7 @@ This boilerplate was developed with the following technologies:
 </div>
  
 <div style="display:flex">
-:computer: <h3>Lembrando que esse projeto é responsivo. Do mobile first para o desktop<h3>
+ <h3>:computer: Lembrando que esse projeto é responsivo. Do mobile first para o desktop<h3>
 </div>
 
 

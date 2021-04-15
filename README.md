@@ -16,13 +16,22 @@ This boilerplate was developed with the following technologies:
 
 <br>
 
+## :information_source: QRCode para Deploy
+
+---
+
+<div style="display:flex">
+    <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/QRcode.png"" width="50%"/>
+- [Deploy](https://parking-deploy.vercel.app/)
+</div>
+
 ## :information_source: Interfaces
 
 ---
 
-<div style="display:flex, text-align:center">
+<div style="display:flex">
     <img alt="qrcode" src="https://github.com/eliziebluiz/Parking/blob/main/interfaces/QRcode.png"" width="50%"/>
-
+- [Deploy](https://parking-deploy.vercel.app/)
 </div>
 
 
